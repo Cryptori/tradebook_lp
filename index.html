@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tradebook — Journal Trading Profesional</title>
-  <meta name="description" content="Catat, analisis, dan tingkatkan performa trading kamu dengan Tradebook. Journal trading pintar dengan AI advisor, analytics mendalam, dan risk calculator." />
+  <title>Tradebook — Trading Journal Profesional untuk Trader Indonesia</title>
+  <meta name="description" content="Journal trading pintar dengan AI advisor, portfolio tracker, economic calendar, backtesting, dan 20+ fitur lainnya. Gratis selamanya." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
@@ -15,124 +15,152 @@
       --green: #00c896; --green2: #00a878; --red: #e84040;
       --gray1: #1a1a1a; --gray2: #3a3a3a; --gray3: #6b6b6b;
       --gray4: #b0b0b0; --gray5: #e8e6e1; --border: #e2e0db;
+      --gold: #c9a84c;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(250,250,248,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-    .nav-logo { font-family: 'DM Mono', monospace; font-size: 15px; font-weight: 500; letter-spacing: 0.15em; color: var(--black); text-decoration: none; }
-    .nav-logo span { color: var(--green); }
-    .nav-cta { background: var(--black); color: var(--white); border: none; border-radius: 100px; padding: 10px 24px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; }
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(250,250,248,0.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'DM Mono', monospace; font-size: 14px; font-weight: 500; letter-spacing: 0.15em; color: var(--black); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .nav-logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+    .nav-cta { background: var(--black); color: var(--white); border: none; border-radius: 100px; padding: 9px 22px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; }
     .nav-cta:hover { background: var(--gray1); transform: translateY(-1px); }
 
+    /* HERO */
     .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 48px 80px; text-align: center; position: relative; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,200,150,0.08) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 80% 80%, rgba(0,200,150,0.05) 0%, transparent 50%); }
-    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--cream); border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gray3); letter-spacing: 0.05em; margin-bottom: 32px; position: relative; z-index: 1; animation: fadeUp 0.6s ease both; }
-    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
-    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(48px, 7vw, 88px); line-height: 1.05; letter-spacing: -0.02em; color: var(--black); max-width: 800px; position: relative; z-index: 1; animation: fadeUp 0.6s 0.1s ease both; }
+    .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,200,150,0.07) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 80% 80%, rgba(0,200,150,0.04) 0%, transparent 50%); }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--cream); border: 1px solid var(--border); border-radius: 100px; padding: 5px 14px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gray3); letter-spacing: 0.05em; margin-bottom: 28px; position: relative; z-index: 1; animation: fadeUp 0.6s ease both; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(44px, 6.5vw, 84px); line-height: 1.05; letter-spacing: -0.02em; color: var(--black); max-width: 820px; position: relative; z-index: 1; animation: fadeUp 0.6s 0.1s ease both; }
     .hero h1 em { font-style: italic; color: var(--green); }
-    .hero-sub { font-size: 17px; color: var(--gray3); line-height: 1.7; max-width: 480px; margin: 24px auto 0; font-weight: 300; position: relative; z-index: 1; animation: fadeUp 0.6s 0.2s ease both; }
-    .hero-actions { display: flex; gap: 12px; align-items: center; justify-content: center; margin-top: 40px; position: relative; z-index: 1; animation: fadeUp 0.6s 0.3s ease both; }
-    .btn-primary { background: var(--black); color: var(--white); border: none; border-radius: 100px; padding: 14px 32px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-primary:hover { background: var(--gray1); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-    .btn-ghost { background: transparent; color: var(--gray2); border: 1px solid var(--border); border-radius: 100px; padding: 14px 28px; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-block; }
+    .hero-sub { font-size: 16px; color: var(--gray3); line-height: 1.7; max-width: 500px; margin: 22px auto 0; font-weight: 300; position: relative; z-index: 1; animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-actions { display: flex; gap: 10px; align-items: center; justify-content: center; margin-top: 36px; position: relative; z-index: 1; animation: fadeUp 0.6s 0.3s ease both; flex-wrap: wrap; }
+    .btn-primary { background: var(--black); color: var(--white); border: none; border-radius: 100px; padding: 13px 30px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 7px; }
+    .btn-primary:hover { background: var(--gray1); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .btn-ghost { background: transparent; color: var(--gray2); border: 1px solid var(--border); border-radius: 100px; padding: 12px 26px; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-block; }
     .btn-ghost:hover { border-color: var(--gray3); color: var(--black); }
-    .hero-stats { display: flex; gap: 48px; margin-top: 64px; justify-content: center; position: relative; z-index: 1; animation: fadeUp 0.6s 0.4s ease both; }
+    .hero-stats { display: flex; gap: 40px; margin-top: 60px; justify-content: center; position: relative; z-index: 1; animation: fadeUp 0.6s 0.4s ease both; flex-wrap: wrap; }
     .hero-stat { text-align: center; }
-    .hero-stat-num { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--black); }
-    .hero-stat-label { font-size: 12px; color: var(--gray4); margin-top: 2px; }
+    .hero-stat-num { font-family: 'DM Serif Display', serif; font-size: 30px; color: var(--black); }
+    .hero-stat-label { font-size: 11px; color: var(--gray4); margin-top: 2px; }
 
-    .ticker { background: var(--black); color: var(--white); padding: 14px 0; overflow: hidden; }
-    .ticker-track { display: flex; white-space: nowrap; animation: ticker 30s linear infinite; }
-    .ticker-item { display: inline-flex; align-items: center; gap: 8px; padding: 0 32px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.05em; }
-    .ticker-item .up { color: var(--green); }
-    .ticker-item .dn { color: var(--red); }
+    /* TICKER */
+    .ticker { background: var(--black); color: var(--white); padding: 12px 0; overflow: hidden; }
+    .ticker-track { display: flex; white-space: nowrap; animation: ticker 35s linear infinite; }
+    .ticker-item { display: inline-flex; align-items: center; gap: 8px; padding: 0 28px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.04em; }
+    .up { color: var(--green); } .dn { color: var(--red); }
     @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-    .section { padding: 100px 48px; max-width: 1100px; margin: 0 auto; }
-    .section-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: var(--green); text-transform: uppercase; margin-bottom: 16px; }
-    .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(32px, 4vw, 52px); line-height: 1.1; letter-spacing: -0.02em; color: var(--black); max-width: 560px; }
+    /* SECTIONS */
+    .section { padding: 96px 48px; max-width: 1100px; margin: 0 auto; }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: var(--green); text-transform: uppercase; margin-bottom: 14px; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.1; letter-spacing: -0.02em; color: var(--black); max-width: 560px; }
     .section-title em { font-style: italic; }
 
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 64px; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--border); }
-    .feature-card { background: var(--white); padding: 36px 32px; transition: background 0.2s; }
+    /* FEATURES GRID */
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 56px; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--border); }
+    .feature-card { background: var(--white); padding: 32px 28px; transition: background 0.2s; }
     .feature-card:hover { background: var(--cream); }
-    .feature-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--cream); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px; }
-    .feature-title { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--black); margin-bottom: 10px; }
-    .feature-desc { font-size: 14px; color: var(--gray3); line-height: 1.7; font-weight: 300; }
+    .feature-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--cream); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 16px; }
+    .feature-title { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--black); margin-bottom: 8px; }
+    .feature-desc { font-size: 13px; color: var(--gray3); line-height: 1.7; font-weight: 300; }
+    .feature-tag { display: inline-flex; align-items: center; gap: 4px; margin-top: 10px; font-size: 10px; padding: 2px 8px; border-radius: 100px; background: rgba(0,200,150,0.08); color: var(--green); border: 1px solid rgba(0,200,150,0.2); font-family: 'DM Mono', monospace; letter-spacing: 0.05em; }
 
+    /* METRICS */
     .metrics { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .metrics-inner { max-width: 1100px; margin: 0 auto; padding: 80px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .metrics-left p { font-size: 15px; color: var(--gray3); line-height: 1.8; margin-top: 20px; font-weight: 300; }
-    .metrics-cards { display: flex; flex-direction: column; gap: 12px; }
-    .metric-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
-    .metric-label { font-size: 13px; color: var(--gray3); }
-    .metric-value { font-family: 'DM Mono', monospace; font-size: 22px; font-weight: 500; }
-    .metric-value.up { color: var(--green); }
-    .metric-value.dn { color: var(--red); }
-    .metric-bar { height: 4px; background: var(--gray5); border-radius: 2px; margin-top: 8px; overflow: hidden; }
+    .metrics-inner { max-width: 1100px; margin: 0 auto; padding: 80px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .metrics-left p { font-size: 15px; color: var(--gray3); line-height: 1.8; margin-top: 18px; font-weight: 300; }
+    .metrics-cards { display: flex; flex-direction: column; gap: 10px; }
+    .metric-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; transition: transform 0.2s; }
+    .metric-card:hover { transform: translateX(4px); }
+    .metric-label { font-size: 12px; color: var(--gray3); }
+    .metric-value { font-family: 'DM Mono', monospace; font-size: 20px; font-weight: 500; }
+    .metric-value.up { color: var(--green); } .metric-value.dn { color: var(--red); }
+    .metric-bar { height: 3px; background: var(--gray5); border-radius: 2px; margin-top: 6px; overflow: hidden; }
     .metric-bar-fill { height: 100%; border-radius: 2px; }
 
-    .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 64px; }
+    /* HOW */
+    .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 56px; }
     .how-step { position: relative; }
-    .how-num { font-family: 'DM Serif Display', serif; font-size: 64px; color: var(--gray5); line-height: 1; margin-bottom: 16px; }
-    .how-title { font-size: 16px; font-weight: 500; margin-bottom: 8px; color: var(--black); }
-    .how-desc { font-size: 14px; color: var(--gray3); line-height: 1.7; font-weight: 300; }
-    .how-connector { position: absolute; top: 32px; right: -20px; color: var(--gray5); font-size: 20px; }
+    .how-num { font-family: 'DM Serif Display', serif; font-size: 56px; color: var(--gray5); line-height: 1; margin-bottom: 14px; }
+    .how-title { font-size: 15px; font-weight: 500; margin-bottom: 8px; color: var(--black); }
+    .how-desc { font-size: 13px; color: var(--gray3); line-height: 1.7; font-weight: 300; }
+    .how-connector { position: absolute; top: 28px; right: -18px; color: var(--gray5); font-size: 18px; }
 
-    .cta-section { background: var(--black); color: var(--white); padding: 100px 48px; text-align: center; }
+    /* FEATURE LIST */
+    .feature-list { background: var(--black); color: var(--white); }
+    .feature-list-inner { max-width: 1100px; margin: 0 auto; padding: 80px 48px; }
+    .feature-list-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+    .feature-list-item { display: flex; align-items: flex-start; gap: 10px; }
+    .feature-list-icon { width: 28px; height: 28px; border-radius: 7px; background: rgba(0,200,150,0.1); border: 1px solid rgba(0,200,150,0.2); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+    .feature-list-text { font-size: 13px; color: #8a96aa; line-height: 1.5; }
+    .feature-list-text strong { color: #dde4ef; font-weight: 500; display: block; margin-bottom: 2px; }
+
+    /* CTA */
+    .cta-section { background: var(--black); color: var(--white); padding: 96px 48px; text-align: center; }
     .cta-section .section-label { color: var(--green); }
-    .cta-title { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 5vw, 64px); line-height: 1.1; letter-spacing: -0.02em; margin: 16px auto 24px; max-width: 600px; }
+    .cta-title { font-family: 'DM Serif Display', serif; font-size: clamp(34px, 4.5vw, 60px); line-height: 1.1; letter-spacing: -0.02em; margin: 14px auto 22px; max-width: 580px; }
     .cta-title em { font-style: italic; color: var(--green); }
-    .cta-sub { font-size: 16px; color: var(--gray4); font-weight: 300; margin-bottom: 40px; }
-    .btn-green { background: var(--green); color: var(--black); border: none; border-radius: 100px; padding: 16px 40px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; }
+    .cta-sub { font-size: 15px; color: #6b6b6b; font-weight: 300; margin-bottom: 36px; }
+    .btn-green { background: var(--green); color: var(--black); border: none; border-radius: 100px; padding: 15px 38px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; }
     .btn-green:hover { background: var(--green2); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,200,150,0.3); }
-    .cta-note { font-size: 12px; color: var(--gray3); margin-top: 16px; }
+    .cta-note { font-size: 12px; color: #4a4a4a; margin-top: 14px; }
 
-    footer { background: var(--black); border-top: 1px solid #1a1a1a; padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; }
-    .footer-logo { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--gray3); letter-spacing: 0.1em; }
+    /* FOOTER */
+    footer { background: var(--black); border-top: 1px solid #151515; padding: 28px 48px; display: flex; align-items: center; justify-content: space-between; }
+    .footer-logo { font-family: 'DM Mono', monospace; font-size: 12px; color: #4a4a4a; letter-spacing: 0.12em; }
     .footer-logo span { color: var(--green); }
-    .footer-copy { font-size: 12px; color: var(--gray3); }
+    .footer-copy { font-size: 11px; color: #3a3a3a; }
 
-    @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    /* ANIMATIONS */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
+    /* RESPONSIVE */
     @media (max-width: 768px) {
-      nav { padding: 16px 20px; }
-      .hero { padding: 100px 20px 60px; }
-      .hero-stats { gap: 24px; }
-      .section { padding: 60px 20px; }
+      nav { padding: 14px 18px; }
+      .hero { padding: 96px 18px 56px; }
+      .hero-stats { gap: 20px; }
+      .section { padding: 56px 18px; }
       .features-grid { grid-template-columns: 1fr; }
-      .metrics-inner { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px; }
-      .how-grid { grid-template-columns: 1fr; gap: 32px; }
+      .metrics-inner { grid-template-columns: 1fr; gap: 36px; padding: 56px 18px; }
+      .how-grid { grid-template-columns: 1fr; gap: 28px; }
       .how-connector { display: none; }
-      .cta-section { padding: 60px 20px; }
-      footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px 20px; }
+      .cta-section { padding: 56px 18px; }
+      .feature-list-grid { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: column; gap: 10px; text-align: center; padding: 20px 18px; }
+    }
+    @media (max-width: 480px) {
+      .feature-list-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#" class="nav-logo">TRADE<span>BOOK</span></a>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      TRADEBOOK
+    </a>
     <a href="https://tradebook-bice.vercel.app" class="nav-cta">Mulai Gratis →</a>
   </nav>
 
   <section class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-badge"><div class="hero-badge-dot"></div>Journal Trading Berbasis AI</div>
-    <h1>Trading lebih <em>cerdas</em><br/>bukan lebih keras</h1>
-    <p class="hero-sub">Catat setiap trade, analisis pola kamu, dan dapatkan insights dari AI — semua dalam satu platform yang dirancang untuk trader serius.</p>
+    <div class="hero-badge">✦ Journal Trading Berbasis AI · Gratis Selamanya</div>
+    <h1>Trading lebih <em>cerdas</em>,<br/>bukan lebih keras</h1>
+    <p class="hero-sub">Platform journal trading lengkap dengan AI advisor, portfolio tracker, economic calendar, dan 20+ fitur untuk trader forex, crypto, dan saham Indonesia.</p>
     <div class="hero-actions">
       <a href="https://tradebook-bice.vercel.app" class="btn-primary">Mulai Gratis →</a>
       <a href="#features" class="btn-ghost">Lihat Fitur</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">12+</div><div class="hero-stat-label">Fitur lengkap</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">Fitur lengkap</div></div>
       <div class="hero-stat"><div class="hero-stat-num">AI</div><div class="hero-stat-label">Powered advisor</div></div>
       <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">Gratis sekarang</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">PWA</div><div class="hero-stat-label">Install di HP</div></div>
     </div>
   </section>
 
@@ -146,6 +174,8 @@
       <span class="ticker-item">AAPL <span class="dn">-0.89%</span></span>
       <span class="ticker-item">NAS100 <span class="up">+0.55%</span></span>
       <span class="ticker-item">WTI/USD <span class="dn">-1.02%</span></span>
+      <span class="ticker-item">USD/JPY <span class="up">+0.28%</span></span>
+      <span class="ticker-item">ETH/USDT <span class="up">+1.84%</span></span>
       <span class="ticker-item">EUR/USD <span class="up">+0.42%</span></span>
       <span class="ticker-item">BTC/USDT <span class="up">+2.18%</span></span>
       <span class="ticker-item">XAU/USD <span class="dn">-0.31%</span></span>
@@ -154,32 +184,66 @@
       <span class="ticker-item">AAPL <span class="dn">-0.89%</span></span>
       <span class="ticker-item">NAS100 <span class="up">+0.55%</span></span>
       <span class="ticker-item">WTI/USD <span class="dn">-1.02%</span></span>
+      <span class="ticker-item">USD/JPY <span class="up">+0.28%</span></span>
+      <span class="ticker-item">ETH/USDT <span class="up">+1.84%</span></span>
     </div>
   </div>
 
+  <!-- CORE FEATURES -->
   <div id="features">
     <section class="section">
       <div class="reveal">
-        <div class="section-label">Fitur</div>
+        <div class="section-label">Fitur Utama</div>
         <h2 class="section-title">Semua yang kamu butuhkan untuk <em>berkembang</em></h2>
       </div>
       <div class="features-grid reveal">
-        <div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">Trade Journal</div><p class="feature-desc">Log setiap trade dengan detail lengkap — entry, exit, SL/TP, emosi, screenshot, dan catatan strategi.</p></div>
-        <div class="feature-card"><div class="feature-icon">🤖</div><div class="feature-title">AI Advisor</div><p class="feature-desc">Dapatkan analisis mingguan dan coaching dari AI yang memahami data trading kamu secara mendalam.</p></div>
-        <div class="feature-card"><div class="feature-icon">📈</div><div class="feature-title">Analytics Mendalam</div><p class="feature-desc">Win rate, profit factor, equity curve, heatmap performa — semua visualisasi yang kamu butuhkan.</p></div>
-        <div class="feature-card"><div class="feature-icon">🎯</div><div class="feature-title">Risk Calculator</div><p class="feature-desc">Hitung lot size optimal berdasarkan % risk per trade secara real-time untuk setiap market.</p></div>
-        <div class="feature-card"><div class="feature-icon">📅</div><div class="feature-title">Daily Journal</div><p class="feature-desc">Tulis pre & post market analysis, track mood, market bias, dan lessons learned setiap hari.</p></div>
-        <div class="feature-card"><div class="feature-icon">📚</div><div class="feature-title">Playbook Setup</div><p class="feature-desc">Dokumentasikan semua setup trading kamu lengkap dengan entry rules, SL/TP, dan checklist eksekusi.</p></div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <div class="feature-title">Trade Journal</div>
+          <p class="feature-desc">Log setiap trade dengan detail lengkap — entry, exit, SL/TP, emosi, screenshot, dan strategi. P&L dan R:R dihitung otomatis.</p>
+          <div class="feature-tag">✓ Auto P&L & R:R</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <div class="feature-title">AI Advisor</div>
+          <p class="feature-desc">Analisis mingguan otomatis dan chat langsung dengan AI yang memahami seluruh data trading kamu secara mendalam.</p>
+          <div class="feature-tag">✦ Powered by Claude</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <div class="feature-title">Analytics Mendalam</div>
+          <p class="feature-desc">Win rate, profit factor, equity curve, heatmap performa, analisis per strategi, emosi, dan hari trading.</p>
+          <div class="feature-tag">✓ 10+ Chart Types</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💼</div>
+          <div class="feature-title">Portfolio Tracker</div>
+          <p class="feature-desc">Monitor posisi open real-time, unrealized P&L, alokasi per market, dan exposure total akun kamu.</p>
+          <div class="feature-tag">✓ Multi Market</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <div class="feature-title">Economic Calendar</div>
+          <p class="feature-desc">High impact news, countdown ke event berikutnya, auto-tag trade yang kena news, filter per currency.</p>
+          <div class="feature-tag">✓ Live Feed</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <div class="feature-title">Trading Plan Builder</div>
+          <p class="feature-desc">Buat rencana trading mingguan — target profit, max loss, fokus pair, dan rules. Review performa vs rencana di akhir minggu.</p>
+          <div class="feature-tag">✓ Weekly Review</div>
+        </div>
       </div>
     </section>
   </div>
 
+  <!-- METRICS -->
   <div class="metrics">
     <div class="metrics-inner">
       <div class="metrics-left reveal">
         <div class="section-label">Analytics</div>
         <h2 class="section-title">Data yang bicara <em>lebih keras</em> dari feeling</h2>
-        <p>Trader yang melacak performa mereka secara konsisten memiliki win rate lebih tinggi dibanding yang tidak. Tradebook membuat tracking mudah dan menyenangkan.</p>
+        <p>Trader yang melacak performa secara konsisten memiliki disiplin lebih tinggi. Tradebook membuat tracking terasa natural dan menyenangkan.</p>
       </div>
       <div class="metrics-cards reveal">
         <div class="metric-card"><div><div class="metric-label">Win Rate</div><div class="metric-bar"><div class="metric-bar-fill" style="width:68%;background:#00c896"></div></div></div><div class="metric-value up">68.4%</div></div>
@@ -190,35 +254,67 @@
     </div>
   </div>
 
+  <!-- ALL FEATURES LIST -->
+  <div class="feature-list">
+    <div class="feature-list-inner">
+      <div class="reveal">
+        <div class="section-label" style="color:var(--green)">20+ Fitur</div>
+        <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,46px);color:#dde4ef;letter-spacing:-0.02em;max-width:500px;line-height:1.1;">
+          Platform <em style="font-style:italic;color:var(--green)">terlengkap</em> untuk trader Indonesia
+        </h2>
+      </div>
+      <div class="feature-list-grid reveal">
+        <div class="feature-list-item"><div class="feature-list-icon">📊</div><div class="feature-list-text"><strong>Trade Journal</strong>Log lengkap dengan screenshot & tags</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">🤖</div><div class="feature-list-text"><strong>AI Advisor</strong>Weekly report & chat dengan Claude</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">💼</div><div class="feature-list-text"><strong>Portfolio Tracker</strong>Monitor posisi open real-time</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">📅</div><div class="feature-list-text"><strong>Economic Calendar</strong>High impact news & countdown</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">📈</div><div class="feature-list-text"><strong>Analytics</strong>10+ chart & breakdown mendalam</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">🎯</div><div class="feature-list-text"><strong>Risk Calculator</strong>Lot size optimal per trade</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">📋</div><div class="feature-list-text"><strong>Trading Plan</strong>Weekly plan & review</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">📚</div><div class="feature-list-text"><strong>Playbook</strong>Dokumentasi setup & checklist</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">🔬</div><div class="feature-list-text"><strong>Backtest Journal</strong>Log & compare vs live</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">🏦</div><div class="feature-list-text"><strong>Broker Comparison</strong>Spread & biaya per broker</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">📝</div><div class="feature-list-text"><strong>Daily Journal</strong>Pre/post market analysis</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">▶️</div><div class="feature-list-text"><strong>Trade Replay</strong>Chart TradingView terintegrasi</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">🏆</div><div class="feature-list-text"><strong>Achievements</strong>Badge, streak & level XP</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">📤</div><div class="feature-list-text"><strong>Export Excel & PDF</strong>Laporan 4 sheet profesional</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">🔔</div><div class="feature-list-text"><strong>Push Notification</strong>Reminder jurnal & alert drawdown</div></div>
+        <div class="feature-list-item"><div class="feature-list-icon">☁️</div><div class="feature-list-text"><strong>Cloud Sync</strong>Multi akun via Supabase</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
   <section class="section">
     <div class="reveal">
       <div class="section-label">Cara Kerja</div>
       <h2 class="section-title">Mulai dalam <em>3 langkah</em></h2>
     </div>
     <div class="how-grid reveal">
-      <div class="how-step"><div class="how-num">01</div><div class="how-title">Daftar & Setup Akun</div><p class="how-desc">Buat akun gratis, set modal awal, target profit, dan max drawdown kamu. Langsung pakai tanpa konfigurasi ribet.</p><div class="how-connector">→</div></div>
-      <div class="how-step"><div class="how-num">02</div><div class="how-title">Log Setiap Trade</div><p class="how-desc">Catat trade masuk dan keluar, tambahkan screenshot chart, emosi saat trading, dan notes strategi. Semua tersimpan di cloud.</p><div class="how-connector">→</div></div>
-      <div class="how-step"><div class="how-num">03</div><div class="how-title">Analisis & Berkembang</div><p class="how-desc">Lihat pattern trading kamu, dapatkan laporan mingguan dari AI, dan perbaiki edge kamu berdasarkan data nyata.</p></div>
+      <div class="how-step"><div class="how-num">01</div><div class="how-title">Daftar & Setup</div><p class="how-desc">Buat akun gratis, set modal awal, target profit, dan max drawdown. Langsung pakai tanpa konfigurasi ribet.</p><div class="how-connector">→</div></div>
+      <div class="how-step"><div class="how-num">02</div><div class="how-title">Log Setiap Trade</div><p class="how-desc">Catat trade dengan screenshot, strategi, dan emosi. P&L dan R:R dihitung otomatis. Semua tersimpan di cloud.</p><div class="how-connector">→</div></div>
+      <div class="how-step"><div class="how-num">03</div><div class="how-title">Analisis & Berkembang</div><p class="how-desc">Lihat pattern trading kamu, dapatkan laporan mingguan dari AI, dan perbaiki edge berdasarkan data nyata.</p></div>
     </div>
   </section>
 
+  <!-- CTA -->
   <div class="cta-section">
     <div class="section-label reveal">Mulai Sekarang</div>
     <h2 class="cta-title reveal">Sudah siap trading lebih <em>konsisten</em>?</h2>
-    <p class="cta-sub reveal">Gratis selamanya. Tidak perlu kartu kredit.</p>
+    <p class="cta-sub reveal">Gratis selamanya · Tidak perlu kartu kredit · Install di HP</p>
     <a href="https://tradebook-bice.vercel.app" class="btn-green reveal">Buat Akun Gratis →</a>
     <p class="cta-note reveal">Dibuat untuk trader forex, crypto, dan saham Indonesia</p>
   </div>
 
   <footer>
     <div class="footer-logo">TRADE<span>BOOK</span></div>
-    <div class="footer-copy">© 2026 Tradebook. Dibuat untuk trader Indonesia.</div>
+    <div class="footer-copy">© 2026 Tradebook · Dibuat untuk trader Indonesia</div>
   </footer>
 
   <script>
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
   </script>
 </body>
